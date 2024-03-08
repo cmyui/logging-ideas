@@ -16,8 +16,8 @@ def main() -> int:
 
     try:
         1 / 0
-    except Exception as e:
-        logging.error("Hello info!", exc_info=e, extra={"test": "value"})
+    except Exception:
+        logging.exception("Hello info!", extra={"test": "value"})
 
     return 0
 
