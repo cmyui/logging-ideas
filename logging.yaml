@@ -12,10 +12,12 @@ handlers:
     formatter: plaintext
     stream: ext://sys.stdout
   file:
-    class: logging.FileHandler
+    class: logging.handlers.TimedRotatingFileHandler
     level: INFO
     formatter: json
     filename: logs.log
+    when: midnight
+    backupCount: 5
 formatters:
   plaintext:
     format: '%(asctime)s %(name)s %(levelname)s %(message)s'
